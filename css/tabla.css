@@ -1,0 +1,32 @@
+         table.tablesorter{
+            border-width: 1px;
+            border-style: outset;
+            width:100%;
+            color:white;
+         }
+         /*CONFIGURA LA CABECERA PONE LAS IMAGENES DE LAS FLECHAS*/
+         table.tablesorter thead th.ordenable{
+            background-color:skyblue;
+            background-image: url(../img/arrow_down.gif);
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-position: 97% 50%;
+         }
+         /*IMAGEN DE LAS FLECHAS ORDEN ASCENDENTE*/
+         table.tablesorter thead th.ordenableAsc{
+            background-image: url(../img/arrow_up.gif);
+         }
+         /*IMAGEN DE LAS FLECASH ORDEN DESCENDENTE*/
+         table.tablesorter thead th.ordenableDesc{
+            background-image: url(../img/arrow_down.gif);
+         }
+         /*COLOR PARA LAS FILAS ODD Y PARA QUE SALGA LA MANO*/
+         table.tablesorter tbody tr.odd td{
+            background-color:#3399FF;
+            cursor: pointer;
+         }
+         /*COLOR PARA LAS FILAS EVEN Y PARA QUE SALGA LA MANO*/
+         table.tablesorter tbody tr.even td{
+            background-color:#00887C;
+            cursor: pointer;
+         }

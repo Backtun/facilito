@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/tabla.css">
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tablesorter.js"></script>  
+	    <script type="text/javascript">
+	$(document).ready(function()
+            {
+               //CONFIGURAMOS LOS CSS DE LA CABECERA
+               //PARA QUE PINTE LAS FLECHAS CORRESPONDIENTES
+               //A LA ORDENACION
+               //AÑADIMOS EL WIDGET ‘ZEBRA’ PARA QUE PINTE
+               //lAS FILAS DE COLOR ALTERNO
+               $('#tabla_css_tablesorter_highlight').tablesorter(
+                  {
+                     cssHeader:"ordenable",
+                     cssDesc:"ordenableAsc",
+                     cssAsc:"ordenableDesc",
+                     widgets: ['zebra']
+                  }
+         );
+         //PARA QUE RESALTE LA FILA SELECCIONADA DE NARANJA
+         //MODIFICAMOS LOS EVENTOS MOUSEOVER Y MOUSEOUT
+         //Y PARA CADA CELDA DE CADA FILA LE ASIGNAMOS
+         //EL VALOR QUE LE CORRESPONDA
+         $('#tabla_css_tablesorter_highlight td').each(function() {
+            $(this).mouseover(function(){
+               filaJQ = $(this).parent().get(0).cells;
+               $(filaJQ).each(function () {
+                  $(this).css("background-color", "#6666FF");
+               });
+            }).mouseout(function(){
+               filaJQ = $(this).parent().get(0).cells;
+               $(filaJQ).each(function () {
+                  $(this).css("background-color", "");
+               });
+            })
+         })
+        }
+       );
+	</script> 
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<nav class="se-gris padding-largo text-center">
+		<ul class="no-lista">
+			<li class="col-md-3 inline-block pacifico"><a href="index.html" class="mediano verde">Food Facilito</a></li>
+			<li class="col-md-3 inline-block"><a href="menu.html">Menú</a></li>
+			<li class="col-md-3 inline-block"><a href="contacto.html">Contacto</a></li>
+			<li class="col-md-3 inline-block"><a href="acercade.html">Acerca de</a></li>
+		</ul>
+	</nav>
+	<section>
+		<div class="text-center mediano">
+			<h1 class="pacifico grande azul">Menú</h1>
+			<p>Todos los productos se preparan con procedimientos de calidad.</p>
+			<div class="col-md-3 col-sm-4 inline-block animated pulse">	
+			<article>
+				<h3 class="pacifico">Hamburguesa</h3>
+				<img src="img/hamburguesa.png" class="col-md-5 col-xs-4 quitar-float">
+				<p>
+					<strong>20MXN</strong>
+				</p>
+			</article>
+			<article>
+				<h3 class="pacifico">Hot dog</h3>
+				<img src="img/hot-dog.png" class="col-md-5 col-xs-4 quitar-float">
+				<p>
+					<strong>10MXN</strong>
+				</p>
+			</article>
+			</div>
+			<div class="col-md-6 col-sm-4 inline-block vete-arriba animated pulse">
+			<article>
+				<h3 class="pacifico">Helado</h3>
+				<img src="img/cream.png" class="col-md-4 col-xs-4 quitar-float">
+				<p>
+					<strong>15MXN</strong>
+				</p>
+			</article></div>
+			<div class="col-md-3 col-sm-4 inline-block animated pulse">
+				<article>
+				<h3 class="pacifico">Papas</h3>
+				<img src="img/papas.png" class="col-md-5 col-xs-4 quitar-float">
+				<p>
+					<strong>20MXN</strong>
+				</p>
+			</article>
+			<article>
+				<h3 class="pacifico">Taco</h3>
+				<img src="img/taco.png" class="col-md-5 col-xs-4 quitar-float">
+				<p>
+					<strong>5MXN</strong>
+				</p>
+			</article>
+			</div>
+		</div>
+	</section>
+	<table id="tabla_css_tablesorter_highlight" class="tablesorter">
+         <thead>
+            <tr>
+               <th>Producto</th>
+               <th>Cantidad</th>
+               <th>Precio</th>
+               <th>Descripción</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>Hamburguesa</td>
+               <td>20</td>
+               <td>$20 Pesos</td>
+               <td>Hamburguesa sencilla</td>
+            </tr>
+            <tr>
+               <td>Hot dog</td>
+               <td>30</td>
+               <td>$10 Pesos</td>
+               <td>Hot dog</td>
+            </tr>
+            <tr>
+               <td>Helado</td>
+               <td>50</td>
+               <td>$15 Pesos</td>
+               <td>Helados de sabores</td>
+            </tr>
+            <tr>
+               <td>Papas</td>
+               <td>40 paquetes</td>
+               <td>$20 Pesos c/orden</td>
+               <td>Papas a la francesa</td>
+            </tr>
+             <tr>
+               <td>Tacos</td>
+               <td>80 paquetes</td>
+               <td>$5 Pesos c/pieza</td>
+               <td>Tacos</td>
+            </tr>
+         </tbody>
+      </table>
+</body>
+</html>
